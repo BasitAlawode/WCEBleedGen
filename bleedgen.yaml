@@ -1,8 +1,8 @@
 # Images and labels direcotry should be relative to train.py
-TRAIN_DIR_IMAGES: '../../Focus-DETR/data/WCEBleedGen/train/Train'
-TRAIN_DIR_LABELS: '../../Focus-DETR/data/WCEBleedGen/train/Train'
-VALID_DIR_IMAGES: '../../Focus-DETR/data/WCEBleedGen/train/Val'
-VALID_DIR_LABELS: '../../Focus-DETR/data/WCEBleedGen/train/Val'
+TRAIN_DIR_IMAGES: 'train/Train'
+TRAIN_DIR_LABELS: 'train/Train'
+VALID_DIR_IMAGES: 'train/Val'
+VALID_DIR_LABELS: 'train/Val'
 
 # Class names.
 CLASSES: [

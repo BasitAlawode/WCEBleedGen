@@ -1,3 +1,4 @@
+import os
 import torch
 import cv2
 import numpy as np
@@ -10,33 +11,23 @@ import torchinfo
 import pandas as pd
 from natsort import natsorted
 
-from pytorch_grad_cam import GradCAM, \
-                            ScoreCAM, \
-                            GradCAMPlusPlus, \
-                            AblationCAM, \
-                            XGradCAM, \
-                            EigenCAM, \
-                            EigenGradCAM, \
-                            LayerCAM, \
-                            FullGrad
-from pytorch_grad_cam.utils.model_targets import RawScoresOutputTarget
+from pytorch_grad_cam import GradCAM
 from pytorch_grad_cam.utils.image import show_cam_on_image, preprocess_image
-from pytorch_grad_cam.ablation_layer import AblationLayerVit
 
-#test_images_path = '../../Focus-DETR/data/WCEBleedGen/train/Val'
-#test_images_path = '../../Focus-DETR/data/WCEBleedGen/test/Test_Dataset_1'
-test_images_path = '../../Focus-DETR/data/WCEBleedGen/test/Test_Dataset_2'
+test_images_path = 'train/Val'
+#test_images_path = 'test/Test_Dataset_1'
+#test_images_path = 'Test_Dataset_2'
 
 d_set_name = test_images_path.split('/')[-1]
-config_path = 'data/bleedgen.yaml'
+config_path = 'bleedgen.yaml'
 
-from vision_transformers.detection.detr.model import DETRModel
-from utils.detection.detr.general import (
+from code_utils.vision_transformers.detection.detr.model import DETRModel
+from code_utils.tools.utils.detection.detr.general import (
     set_infer_dir,
     load_weights
 )
-from utils.detection.detr.transforms import infer_transforms, resize
-from utils.detection.detr.annotations import (
+from code_utils.tools.utils.detection.detr.transforms import infer_transforms, resize
+from code_utils.tools.utils.detection.detr.annotations import (
     convert_detections,
     inference_annotations, 
 )
@@ -133,12 +124,12 @@ def collect_all_images(dir_test):
 
 def main(args):
     
-    from train_detector2 import model_backbone, img_size
+    from train import model_backbone, img_size
     args.name = model_backbone
     args.model = model_backbone
     args.data = config_path
     args.imgsz = img_size
-    args.weights = f"runs/training/{model_backbone}/best_model.pth"
+    args.weights = f"trained_weights/best_model.pth"
     args.input = test_images_path
     
     NUM_CLASSES = None
@@ -241,7 +232,9 @@ def main(args):
         cam_img = show_cam_on_image(orig_image/255, 
                                     grayscale_cam.cpu(), 
                                     use_rgb=True)
-        cv2.imwrite(f'runs/visualizations/{d_set_name}/viz_{image_name}.jpg', 
+        if not os.path.exists('results/visualizations'):
+            os.makedirs('results/visualizations')
+        cv2.imwrite(f'results/visualizations/{d_set_name}/viz_{image_name}.jpg', 
                     cam_img)
         
         # Compute Metrics and 
@@ -314,7 +307,9 @@ def main(args):
         print(f"Validation Set Recall: {val_rec}")
         print(f"Validation Set F1-Score: {val_f1}")
     elif 'Test_Dataset' in test_image_path:
-        pred_class_pd.to_excel(f'runs/excel/{d_set_name}.xlsx', index=False)
+        if not os.path.exists('results/excel'):
+            os.makedirs('results/excel')
+        pred_class_pd.to_excel(f'results/excel/{d_set_name}.xlsx', index=False)
         
     print('========DONE=============')
         

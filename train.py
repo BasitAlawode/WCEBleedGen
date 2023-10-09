@@ -6,18 +6,18 @@ import os
 import torchinfo
 import yaml
 
-from utils.detection.datasets import (
+from code_utils.tools.utils.detection.datasets import (
     create_train_dataset, create_valid_dataset, 
     create_train_loader, create_valid_loader
 )
-from utils.detection.detr.engine import train, evaluate
-from vision_transformers.detection.detr.model import DETRModel
-from utils.detection.detr.matcher import HungarianMatcher
-from utils.detection.detr.detr import SetCriterion, PostProcess
+from code_utils.tools.utils.detection.detr.engine import train, evaluate
+from code_utils.vision_transformers.detection.detr.model import DETRModel
+from code_utils.tools.utils.detection.detr.matcher import HungarianMatcher
+from code_utils.tools.utils.detection.detr.detr import SetCriterion, PostProcess
 from torch.utils.data import (
     distributed, RandomSampler, SequentialSampler
 )
-from utils.detection.detr.general import (
+from code_utils.tools.utils.detection.detr.general import (
     SaveBestModel,
     init_seeds,
     set_training_dir,
@@ -25,41 +25,16 @@ from utils.detection.detr.general import (
     save_mAP,
     show_tranformed_image
 )
-from utils.detection.detr.logging import set_log, coco_log
-
-# For Deformable DETR
-#import sys
-#sys.path.append("../..")
-#sys.path.append("../../Deformable_DETR")
-#from Deformable_DETR.main import get_args_parser
-#from Deformable_DETR.models import build_model
-
-
-# For Focus DETR
-from detectron2.checkpoint import DetectionCheckpointer
-from detectron2.config import LazyConfig, instantiate
-from detectron2.engine import (
-    default_argument_parser,
-    default_setup
-)
-from detectron2.engine.defaults import create_ddp_model
-
+from code_utils.tools.utils.detection.detr.logging import set_log, coco_log
 
 RANK = int(os.getenv('RANK', -1))
 np.random.seed(42)
 
-data_config_path = 'data/bleedgen.yaml'
-model_backbone = "detr_resnet50" # detr_resnet50, detr_resnet101_dc5
+data_config_path = 'bleedgen.yaml'
+model_backbone = "detr_resnet50"
 n_epochs = 500
 batch_size = 16
 img_size = 224
-
-# Focus DETR config and checkpoint path
-#conf_file = "../../Focus-DETR/projects/focus_detr/configs/focus_detr_swin/focus_detr_swin_tiny_224_4scale_24ep.py"
-#checkpoint_path = "../../Focus-DETR/trained_models/focus_detr_swin_tiny_224_4scale_24ep.pth"
-
-#checkpoint_path = "../../Deformable_DETR/trained_models/r50_deformable_detr-checkpoint.pth"
-#model_backbone = "deformable_detr"
 
 def parse_opt():
     parser = argparse.ArgumentParser()
@@ -185,38 +160,6 @@ def parse_opt():
     )
     args = parser.parse_args()
     return args
-
-class BleedGenDETRModel(nn.Module):
-    def __init__(self, model, num_classes=1, device='cuda'):
-        super(BleedGenDETRModel, self).__init__()
-        self.num_classes = num_classes
-        self.model = model
-        self.n_class_embed = len(self.model.class_embed)
-        
-        self.out = nn.Linear(
-                in_features=self.model.class_embed[-1].out_features, 
-                out_features=num_classes, device=device)
-        
-    def forward(self, images):
-        d = self.model(images)
-        
-        for i in range(self.n_class_embed-1):
-            d['aux_outputs'][i]['pred_logits'] = self.out(d['aux_outputs'][i]['pred_logits'])
-        
-        d['pred_logits'] = self.out(d['pred_logits'])
-        return d
-    
-    def parameter_groups(self):
-        group_dict = { 
-            'backbone': [p for n,p in self.model.named_parameters()
-                              if (('backbone' in n) or ('neck' in n)) and p.requires_grad],
-            'transformer': [p for n,p in self.model.named_parameters() 
-                                 if (('transformer' in n) or ('input_proj' in n)) and p.requires_grad],
-            #'embed': [p for n,p in self.model.named_parameters()
-            #                     if (('class_embed' in n) or ('bbox_embed' in n) or ('query_embed' in n)) and p.requires_grad],
-            'final': self.out.parameters()
-        }
-        return group_dict
 
 def main(args):
     
