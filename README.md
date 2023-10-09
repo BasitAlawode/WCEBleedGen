@@ -52,7 +52,7 @@ The respective folders in the link also include the xml generated from the given
   </tr>
 </table>
 
-![Training Plot](results_images/map.png)
+![Training Plot](images/map.png)
 
 ## Results: Sample Images (Validation Set)
  - 10 best images showing classisifation and detection (bbox with conf. level)
