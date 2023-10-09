@@ -52,25 +52,112 @@ The respective folders in the link also include the xml generated from the given
   </tr>
 </table>
 
-![Training Plot](images/map.png)
+Below is a plot showing the mean average precision (mAP) of the model on the validation set during training.
+
+![Validation Plot During Training](images/validation.png)
+
+
+![bleed_img- (157)](images/val_sample/bleed_img- (157).jpg)
 
 ## Results: Sample Images (Validation Set)
- - 10 best images showing classisifation and detection (bbox with conf. level)
+<table>
+  <tr>
+    <td> <img src="images/val_sample/bleed_img- (157).jpg"  alt="1" ></td>
+    <td> <img src="images/val_sample/bleed_img- (159).jpg"  alt="2" ></td>
+    <td> <img src="images/val_sample/bleed_img- (163).jpg"  alt="3" ></td>
+    <td> <img src="images/val_sample/bleed_img- (241).jpg"  alt="4" ></td>
+  </tr>
+
+  <tr>
+    <td> <img src="images/val_sample/bleed_img- (309).jpg"  alt="5" ></td>
+    <td> <img src="images/val_sample/bleed_img- (1142).jpg"  alt="6" ></td>
+    <td> <img src="images/val_sample/non-bleed_img- (205).jpg"  alt="7" ></td>
+    <td> <img src="images/val_sample/non-bleed_img- (208).jpg"  alt="8" ></td>
+  </tr>
+
+  <tr>
+    <td> <img src="images/val_sample/non-bleed_img- (414).jpg"  alt="9" ></td>
+    <td> <img src="images/val_sample/non-bleed_img- (471).jpg"  alt="10" ></td>
+  </tr>
+</table>
 
  ## Results: Interpretability Plot (Validation Set)
- - 10 best images 
+<table>
+  <tr>
+    <td> <img src="images/val_interpret/bleed_img- (80).jpg"  alt="1" ></td>
+    <td> <img src="images/val_interpret/bleed_img- (103).jpg"  alt="2" ></td>
+    <td> <img src="images/val_interpret/bleed_img- (261).jpg"  alt="3" ></td>
+    <td> <img src="images/val_interpret/bleed_img- (373).jpg"  alt="4" ></td>
+  </tr>
+
+  <tr>
+    <td> <img src="images/val_interpret/bleed_img- (459).jpg"  alt="5" ></td>
+    <td> <img src="images/val_interpret/non-bleed_img- (242).jpg"  alt="6" ></td>
+    <td> <img src="images/val_interpret/non-bleed_img- (269).jpg"  alt="7" ></td>
+    <td> <img src="images/val_interpret/non-bleed_img- (335).jpg"  alt="8" ></td>
+  </tr>
+
+  <tr>
+    <td> <img src="images/val_interpret/non-bleed_img- (628).jpg"  alt="9" ></td>
+    <td> <img src="images/val_interpret/non-bleed_img- (778).jpg"  alt="10" ></td>
+  </tr>
+</table>
 
 ## Results: Sample Images (Test Set 1)
- - 5 best images
+<table>
+  <tr>
+    <td> <img src="images/test_1_sample/A0023.jpg"  alt="1" ></td>
+    <td> <img src="images/test_1_sample/A0024.jpg"  alt="2" ></td>
+    <td> <img src="images/test_1_sample/A0038.jpg"  alt="3" ></td>
+  </tr>
+
+  <tr>
+    <td> <img src="images/test_1_sample/A0039.jpg"  alt="4" ></td>
+    <td> <img src="images/test_1_sample/A0047.jpg"  alt="5" ></td>
+  </tr>
+</table>
 
  ## Results: Interpretability Plot (Test Set 1)
- - 5 best images 
+<table>
+  <tr>
+    <td> <img src="images/test_1_interpret/A0033.jpg"  alt="1" ></td>
+    <td> <img src="images/test_1_interpret/A0034.jpg"  alt="2" ></td>
+    <td> <img src="images/test_1_interpret/A0040.jpg"  alt="3" ></td>
+  </tr>
+
+  <tr>
+    <td> <img src="images/test_1_interpret/A0042.jpg"  alt="4" ></td>
+    <td> <img src="images/test_1_interpret/A0044.jpg"  alt="5" ></td>
+  </tr>
+</table>
 
 ## Results: Sample Images (Test Set 2)
- - 5 best images 
+<table>
+  <tr>
+    <td> <img src="images/test_2_sample/A0054.jpg"  alt="1" ></td>
+    <td> <img src="images/test_2_sample/A0076.jpg"  alt="2" ></td>
+    <td> <img src="images/test_2_sample/A0152.jpg"  alt="3" ></td>
+  </tr>
+
+  <tr>
+    <td> <img src="images/test_2_sample/A0181.jpg"  alt="4" ></td>
+    <td> <img src="images/test_2_sample/A0275.jpg"  alt="5" ></td>
+  </tr>
+</table>
 
 ## Results: Interpretability Plot (Test Set 2)
- - 5 best images 
+<table>
+  <tr>
+    <td> <img src="images/test_2_interpret/A0053.jpg"  alt="1" ></td>
+    <td> <img src="images/test_2_interpret/A0065.jpg"  alt="2" ></td>
+    <td> <img src="images/test_2_interpret/A0088.jpg"  alt="3" ></td>
+  </tr>
+
+  <tr>
+    <td> <img src="images/test_2_interpret/A0109.jpg"  alt="4" ></td>
+    <td> <img src="images/test_2_interpret/A0124.jpg"  alt="5" ></td>
+  </tr>
+</table>
 
 ## Deliverables:
  1. Trained Model Weights: 
@@ -122,7 +209,7 @@ NOTE:
 
 1. Training results will be available inside the [runs](./runs/) folder.
 
-## Evaluating
+## Testing
 
 To test:
 
@@ -136,9 +223,9 @@ python test.py
 
 NOTE: 
 
-1. Comment out any two of Lines 17, 18, and 19 in [test.py](./test.py) to select one of validation set, test set 1, and test set 2 for evaluation
+1. Comment any two of Lines 17, 18, and 19 in [test.py](./test.py) to select one of validation set, test set 1, and test set 2 for testing.
 
-2. Evaluation results will be available inside the [results](./results/) folder.
+2. Testing results will be available inside the [results](./results/) folder.
  
 
 # Acknowledgement
