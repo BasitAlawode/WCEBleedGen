@@ -1,0 +1,1 @@
+The downloaded validation split should be put inside this folder.

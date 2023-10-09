@@ -1,0 +1,6 @@
+albumentations>=1.1.0
+torchinfo
+tqdm
+deep-sort-realtime
+pycocotools>=2.0.2
+torchmetrics

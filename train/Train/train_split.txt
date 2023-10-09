@@ -1,0 +1,1 @@
+The downloaded training split should be put inside this folder.
