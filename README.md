@@ -80,6 +80,7 @@ Below is a plot showing the mean average precision (mAP) of the model on the val
 </table>
 
  ## Results: Interpretability Plot (Validation Set)
+ NOTE: The below interpretability images are independent of the above predictions.
 <table>
   <tr>
     <td> <img src="images/val_interpret/bleed_img- (80).jpg"  alt="1" ></td>
@@ -116,6 +117,7 @@ Below is a plot showing the mean average precision (mAP) of the model on the val
 </table>
 
  ## Results: Interpretability Plot (Test Set 1)
+ NOTE: The below interpretability images are independent of the above predictions.
 <table>
   <tr>
     <td> <img src="images/test_1_interpret/A0033.jpg"  alt="1" ></td>
@@ -144,6 +146,7 @@ Below is a plot showing the mean average precision (mAP) of the model on the val
 </table>
 
 ## Results: Interpretability Plot (Test Set 2)
+NOTE: The below interpretability images are independent of the above predictions.
 <table>
   <tr>
     <td> <img src="images/test_2_interpret/A0053.jpg"  alt="1" ></td>
