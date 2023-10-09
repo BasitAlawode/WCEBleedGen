@@ -261,7 +261,7 @@ def main(args):
             if "Test_Dataset" in test_image_path:
                 dict = {
                     "image_ID": image_name,
-                    "Pred_Class": p_class 
+                    "Pred_Class": "Bleeding" if p_class else "Non-Bleeding" 
                 }
                 pred_class_pd.loc[len(pred_class_pd)] = dict
             else:
