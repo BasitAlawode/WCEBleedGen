@@ -9,7 +9,7 @@
 - Shibani Hamza
 
 ## The Data
-We split the given train data into training and validation splits using the ratio 80:20. We provide the link to these splits below
+We split the given training data into new training and validation splits using the ratio 80:20. We provide the link to these splits below
 
 - Train and Validation Split [link](https://kuacae-my.sharepoint.com/:u:/g/personal/100060517_ku_ac_ae/EYn_FLfCVmRFikeoHjrjjs0BFXD8oX48_MlAvmLN_PY9eA?e=TXRvZO)
 

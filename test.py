@@ -16,7 +16,7 @@ from pytorch_grad_cam.utils.image import show_cam_on_image, preprocess_image
 
 test_images_path = 'train/Val'
 #test_images_path = 'test/Test_Dataset_1'
-#test_images_path = 'Test_Dataset_2'
+#test_images_path = 'test/Test_Dataset_2'
 
 d_set_name = test_images_path.split('/')[-1]
 config_path = 'bleedgen.yaml'
