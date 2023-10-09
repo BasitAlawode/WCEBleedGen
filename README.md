@@ -83,8 +83,8 @@ Below is a plot showing the mean average precision (mAP) of the model on the val
  NOTE: The below interpretability images are independent of the above predictions.
 <table>
   <tr>
-    <td> <img src="images/val_interpret/bleed_img- (80).jpg"  alt="1" ></td>
-    <td> <img src="images/val_interpret/bleed_img- (103).jpg"  alt="2" ></td>
+    <td> <img src="images/val_interpret/bleed_img- (61).jpg"  alt="1" ></td>
+    <td> <img src="images/val_interpret/bleed_img- (157).jpg"  alt="2" ></td>
     <td> <img src="images/val_interpret/bleed_img- (261).jpg"  alt="3" ></td>
     <td> <img src="images/val_interpret/bleed_img- (373).jpg"  alt="4" ></td>
   </tr>
@@ -93,7 +93,7 @@ Below is a plot showing the mean average precision (mAP) of the model on the val
     <td> <img src="images/val_interpret/bleed_img- (459).jpg"  alt="5" ></td>
     <td> <img src="images/val_interpret/non-bleed_img- (242).jpg"  alt="6" ></td>
     <td> <img src="images/val_interpret/non-bleed_img- (269).jpg"  alt="7" ></td>
-    <td> <img src="images/val_interpret/non-bleed_img- (335).jpg"  alt="8" ></td>
+    <td> <img src="images/val_interpret/non-bleed_img- (507).jpg"  alt="8" ></td>
   </tr>
 
   <tr>

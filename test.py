@@ -12,7 +12,7 @@ import pandas as pd
 from natsort import natsorted
 
 from pytorch_grad_cam import GradCAM
-from pytorch_grad_cam.utils.image import show_cam_on_image, preprocess_image
+from pytorch_grad_cam.utils.image import show_cam_on_image
 
 test_images_path = 'train/Val'
 #test_images_path = 'test/Test_Dataset_1'
@@ -178,17 +178,13 @@ def main(args):
     total_fps = 0
     
     # For interpretability
-    m = model
-    target_layers = [#m.model.transformer.decoder.layers[-1],
-                    m.model.transformer.decoder.norm,
-                    #m.model.class_embed
-                    ]
-    cam = GradCAM(model=m, target_layers=target_layers, use_cuda=True)
+    target_layers = [model.model.transformer.encoder.layers[-1].norm1]
+    cam = GradCAM(model=model, target_layers=target_layers, use_cuda=True)
     cam.batch_size = 32
     
     # Create excel variable if test dataset else compute metrics
     if "Test_Dataset" in test_images_path:
-        pred_class_pd = pd.DataFrame(columns=["image_ID", "Pred_Class"])
+        pred_class_pd = pd.DataFrame(columns=["Image Name", "Predicted Class Label"])
     else:
         m_true_class, m_pred_class = [], []   # Class 0: No bleeding, Class 1: Bleeding
     
@@ -224,17 +220,17 @@ def main(args):
         frame_count += 1
         
         # Interpretability Plot for each image
-        cam_input_tensor = preprocess_image(image, 
-                                        mean=[0.5, 0.5, 0.5],
-                                        std=[0.5, 0.5, 0.5])
+        cam_input_tensor = torch.unsqueeze(torch.tensor(image).permute([2,0,1]), dim=0)
         cam_input_tensor = cam_input_tensor.to(DEVICE)
+        
         grayscale_cam = cam_input_tensor[0, 0, :]
+        grayscale_cam = (grayscale_cam - grayscale_cam.min())/(grayscale_cam.max() - grayscale_cam.min())
         cam_img = show_cam_on_image(orig_image/255, 
                                     grayscale_cam.cpu(), 
-                                    use_rgb=True)
+                                    use_rgb=False)
         if not os.path.exists('results/visualizations'):
             os.makedirs('results/visualizations')
-        cv2.imwrite(f'results/visualizations/{d_set_name}/viz_{image_name}.jpg', 
+        cv2.imwrite(f'results/visualizations/{d_set_name}/{image_name}.jpg', 
                     cam_img)
         
         # Compute Metrics and 
@@ -260,8 +256,8 @@ def main(args):
             
             if "Test_Dataset" in test_image_path:
                 dict = {
-                    "image_ID": image_name,
-                    "Pred_Class": "Bleeding" if p_class else "Non-Bleeding" 
+                    "Image Name": image_name,
+                    "Predicted Class Labels": "Bleeding" if p_class else "Non-Bleeding" 
                 }
                 pred_class_pd.loc[len(pred_class_pd)] = dict
             else:
