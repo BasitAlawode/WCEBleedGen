@@ -21,9 +21,9 @@ The respective folders in the link also include the xml generated from the given
 <table>
   <tr>
     <th></th>
-    <th>Accuracy</th>
-    <th>Recall</th>
-    <th>F1-Score</th>
+    <th>Accuracy (%)</th>
+    <th>Recall (%)</th>
+    <th>F1-Score (%)</th>
   </tr>
 
   <tr>
