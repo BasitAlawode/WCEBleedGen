@@ -5,10 +5,10 @@
 This work <a href=""><img src="https://img.shields.io/badge/Ranked-3rd-blue"></a> in the [Auto-WCEBleedGen](https://misahub.in/CVIP/challenge.html) Version 1 Challenge. 
 
 ## The Team (KU Researchers)
-1. Basit Alawode 
-2. Shibani Hamza
-3. Adarsh Ghimire
-4. Divya Velayudhan
+<a href="https://scholar.google.com/citations?user=DCppi6gAAAAJ&hl=en"><img src="https://img.shields.io/badge/1. Basit Alawode -Google Scholar Profile-blue"></a> <a href="https://scholar.google.com/citations?user=BvUnrAoAAAAJ&hl=en"><img src="https://img.shields.io/badge/2. Shibani Hamza -Google Scholar Profile-blue"></a> <a href="https://scholar.google.com/citations?user=DaKTof0AAAAJ&hl=en"><img src="https://img.shields.io/badge/3. Adarsh Ghimire -Google Scholar Profile-blue"></a> <a href="https://scholar.google.com/citations?user=-ouVDccAAAAJ&hl=en"><img src="https://img.shields.io/badge/4. Divya Velayudhan -Google Scholar Profile-blue"></a>
+
+
+
 
 ## The Data
 We split the given training data into new training and validation splits using the ratio 80:20. We provide the link to these splits below:
