@@ -2,7 +2,7 @@
 
 ## Automatic Detection and Classification of Bleeding and Non-Bleeding frames in Wireless Capsule Endoscopy
 
-This work <a href=""><img src="https://img.shields.io/badge/Ranked-3rd-blue"></a> in the [Auto-WCEBleedGen](https://misahub.in/CVIP/challenge.html) Version 1 Challenge. 
+This work <a href=""><img src="https://img.shields.io/badge/Ranked-3rd-blue"></a> in the [Auto-WCEBleedGen](https://misahub.in/CVIP/challenge.html) Version 1 Challenge [link](https://www.authorea.com/users/715826/articles/719344-auto-wcebleedgen-version-v1-and-v2-challenge-datasets-and-evaluation). 
 
 ## The Team (KU Researchers)
 <a href="https://scholar.google.com/citations?user=DCppi6gAAAAJ&hl=en"><img src="https://img.shields.io/badge/1. Basit Alawode -Google Scholar Profile-blue"></a> <a href="https://scholar.google.com/citations?user=BvUnrAoAAAAJ&hl=en"><img src="https://img.shields.io/badge/2. Shibani Hamza -Google Scholar Profile-blue"></a> <a href="https://scholar.google.com/citations?user=DaKTof0AAAAJ&hl=en"><img src="https://img.shields.io/badge/3. Adarsh Ghimire -Google Scholar Profile-blue"></a> <a href="https://scholar.google.com/citations?user=-ouVDccAAAAJ&hl=en"><img src="https://img.shields.io/badge/4. Divya Velayudhan -Google Scholar Profile-blue"></a>
