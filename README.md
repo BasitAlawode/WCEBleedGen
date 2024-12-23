@@ -1,12 +1,14 @@
-# Auto-WCEBleedGen Challenge
+# Auto-WCEBleedGen Version 1 Challenge
 
 ## Automatic Detection and Classification of Bleeding and Non-Bleeding frames in Wireless Capsule Endoscopy
- 
-## Meet The Team (KU Researchers)
-- Adarsh Ghimire
-- Basit Alawode
-- Divya Velayudhan 
-- Shibani Hamza
+
+This work <a href=""><img src="https://img.shields.io/badge/Ranked-3rd-blue"></a> in the [Auto-WCEBleedGen](https://misahub.in/CVIP/challenge.html) Version 1 Challenge. 
+
+## The Team (KU Researchers)
+1. Basit Alawode 
+2. Shibani Hamza
+3. Adarsh Ghimire
+4. Divya Velayudhan
 
 ## The Data
 We split the given training data into new training and validation splits using the ratio 80:20. We provide the link to these splits below:
