@@ -13,7 +13,7 @@ This work <a href=""><img src="https://img.shields.io/badge/Ranked-3rd-blue"></a
 ## The Data
 We split the given training data into new training and validation splits using the ratio 80:20. We provide the link to these splits below:
 
-- Train and Validation Split [link](https://kuacae-my.sharepoint.com/:u:/g/personal/100060517_ku_ac_ae/EYn_FLfCVmRFikeoHjrjjs0BFXD8oX48_MlAvmLN_PY9eA?e=TXRvZO)
+- Train and Validation Split [link](https://drive.google.com/file/d/1RpC0e6B3wzTEOVYGLMuUfJTxI90b_2vM/view?usp=sharing). NOTE: The dataset remains the property of [Auto-WCEBleedGen Challenge](https://misahub.in/CVIP/challenge.html). Please contact them if you plan to make use of the dataset. 
 
 The respective folders in the link also include the xml generated from the given dataset mask of each image.
 
@@ -165,7 +165,7 @@ NOTE: The below interpretability images are independent of the above predictions
 ## Deliverables:
  1. Trained Model Weights: 
  
- Our trained model weights can be downloaded from [here](https://kuacae-my.sharepoint.com/:u:/g/personal/100060517_ku_ac_ae/EQw6Kf1bgVFKmUnrhKaDtXEB9OOEH5925HPfM2tCgTPKiw?e=loddy)
+ Our trained model weights can be downloaded from [here](https://drive.google.com/file/d/1offbKTaNWJ0U5rhkkMe-WjJuq__MW_yP/view?usp=sharing)
  
  2. Test Dataset Results Excel Sheets:
 
@@ -194,7 +194,7 @@ pip install torch==1.10.0+cu111 torchvision==0.11.0+cu111 torchaudio==0.10.0 -f 
 pip install -r requirements.txt
 ```
 
-4. Download the train and validation data using this [link](https://kuacae-my.sharepoint.com/:u:/g/personal/100060517_ku_ac_ae/EYn_FLfCVmRFikeoHjrjjs0BFXD8oX48_MlAvmLN_PY9eA?e=TXRvZO) 
+4. Download the train and validation data using this [link](https://drive.google.com/file/d/1RpC0e6B3wzTEOVYGLMuUfJTxI90b_2vM/view?usp=sharing). NOTE: The dataset remains the property of [Auto-WCEBleedGen Challenge](https://misahub.in/CVIP/challenge.html). Please contact them if you plan to make use of the dataset. 
 
 5. Unzip and put the train and validation data into their respective folders (train/Train) and (train/Val).
 
@@ -216,7 +216,7 @@ NOTE:
 
 To test:
 
-1. Download our already trained model weights [here](https://kuacae-my.sharepoint.com/:u:/g/personal/100060517_ku_ac_ae/EQw6Kf1bgVFKmUnrhKaDtXEB9OOEH5925HPfM2tCgTPKiw?e=loddyL) and put inside the [trained_weights](./trained_weights) folder.
+1. Download our already trained model weights [here](https://drive.google.com/file/d/1offbKTaNWJ0U5rhkkMe-WjJuq__MW_yP/view?usp=sharing) and put inside the [trained_weights](./trained_weights) folder.
 
 2. Open and run [test.py](./test.py) in the created environment. 
 
