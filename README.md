@@ -240,7 +240,7 @@ NOTE:
 - If you find our work useful, you may consider citing using:
 
 ```
-@misc{alawode2024transformerbasedwirelesscapsuleendoscopy,
+@misc{alawode2024wce,
       title={Transformer-Based Wireless Capsule Endoscopy Bleeding Tissue Detection and Classification}, 
       author={Basit Alawode and Shibani Hamza and Adarsh Ghimire and Divya Velayudhan},
       year={2024},
