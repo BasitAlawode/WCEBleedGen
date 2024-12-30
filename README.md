@@ -2,12 +2,13 @@
 
 ## Automatic Detection and Classification of Bleeding and Non-Bleeding frames in Wireless Capsule Endoscopy
 
-This work <a href=""><img src="https://img.shields.io/badge/Ranked-3rd-blue"></a> in the [Auto-WCEBleedGen](https://misahub.in/CVIP/challenge.html) Version 1 Challenge [link](https://www.authorea.com/users/715826/articles/719344-auto-wcebleedgen-version-v1-and-v2-challenge-datasets-and-evaluation). 
+- This work <a href=""><img src="https://img.shields.io/badge/Ranked-3rd-blue"></a> in the [Auto-WCEBleedGen](https://misahub.in/CVIP/challenge.html) Version 1 Challenge [link](https://www.authorea.com/users/715826/articles/719344-auto-wcebleedgen-version-v1-and-v2-challenge-datasets-and-evaluation). 
 
 ## The Team (KU Researchers)
 <a href="https://scholar.google.com/citations?user=DCppi6gAAAAJ&hl=en"><img src="https://img.shields.io/badge/1. Basit Alawode -Google Scholar Profile-blue"></a> <a href="https://scholar.google.com/citations?user=BvUnrAoAAAAJ&hl=en"><img src="https://img.shields.io/badge/2. Shibani Hamza -Google Scholar Profile-blue"></a> <a href="https://scholar.google.com/citations?user=DaKTof0AAAAJ&hl=en"><img src="https://img.shields.io/badge/3. Adarsh Ghimire -Google Scholar Profile-blue"></a> <a href="https://scholar.google.com/citations?user=-ouVDccAAAAJ&hl=en"><img src="https://img.shields.io/badge/4. Divya Velayudhan -Google Scholar Profile-blue"></a>
 
-
+## Challenge Report
+- Our challenge report can be found [here](https://arxiv.org/abs/2412.19218).
 
 
 ## The Data
@@ -233,6 +234,22 @@ NOTE:
 
 # Acknowledgement
  - This work is based on this [vision transformer](https://github.com/sovit-123/vision_transformers) library.
+
+
+# Citation
+- If you find our work useful, you may cite using
+
+```
+@misc{alawode2024transformerbasedwirelesscapsuleendoscopy,
+      title={Transformer-Based Wireless Capsule Endoscopy Bleeding Tissue Detection and Classification}, 
+      author={Basit Alawode and Shibani Hamza and Adarsh Ghimire and Divya Velayudhan},
+      year={2024},
+      eprint={2412.19218},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2412.19218}, 
+}
+```
 
 
 
