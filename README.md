@@ -237,7 +237,7 @@ NOTE:
 
 
 # Citation
-- If you find our work useful, you may cite using
+- If you find our work useful, you may consider citing using:
 
 ```
 @misc{alawode2024transformerbasedwirelesscapsuleendoscopy,
